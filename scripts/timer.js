@@ -42,7 +42,7 @@ var cipheringWidth = getButtonWidth("ciphering-open");
 var relayWidth = getButtonWidth("relay-open");
 
 var speedWidth = getButtonWidth("speed-open");
-var letterlWidth = getButtonWidth("letter-open");
+var letterWidth = getButtonWidth("letter-open");
 
 var continuousWidth = getButtonWidth("continuous-open");
 var customWidth = getButtonWidth("custom-open");
