@@ -6,7 +6,7 @@ John Williams
 /*****************************************************************************\
       Immediately-needed formatting
 \*****************************************************************************/
-
+ready = true;
 // SPLASH SCREEN
 $("#continue-button").click(function() {
       $('#button-box').show();
