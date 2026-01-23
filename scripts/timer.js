@@ -8,13 +8,13 @@ John Williams
 \*****************************************************************************/
 
 // SPLASH SCREEN
-$("#continue-button").click(function() {
+/*$("#continue-button").click(function() {
   $("#splash").fadeOut(400);
   $("#splashcover").fadeOut(400, function() {
     $("html").css("overflow", "auto");
     $("body").css("overflow", "auto");
   });
-});
+});*/
 
 // FORMATTING THINGS
 function getProperty(elem, prop) {
