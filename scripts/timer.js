@@ -42,7 +42,7 @@ var cipheringWidth = getButtonWidth("ciphering-open");
 var relayWidth = getButtonWidth("relay-open");
 
 var speedWidth = getButtonWidth("speed-open");
-var letterWidth = getButtonWidth("letter-open");
+var 30-MinuteWidth = getButtonWidth("30-Minute-open");
 
 var continuousWidth = getButtonWidth("continuous-open");
 var customWidth = getButtonWidth("custom-open");
@@ -51,7 +51,7 @@ if (!mobile) {
   // find width of the largest (computed) row, distribute button sizes in the other rows to match
   var row1 = teamWidth+indivWidth;
   var row2 = hustleWidth+cipheringWidth+relayWidth;
-  var row3 = speedWidth+letterWidth;
+  var row3 = speedWidth+30-MinuteWidth;
   var row4 = continuousWidth+customWidth;
   // the addition is somewhat inaccurate (?) so give each row 15px breathing room
   // idk how sort is working here but w3schools says it does, so...
@@ -67,14 +67,14 @@ if (!mobile) {
   setButtonWidth("relay-open", relayWidth/row2 * largest);
 
   setButtonWidth("speed-open", speedWidth/row3 * largest);
-  setButtonWidth("letter-open", letterWidth/row3 * largest);
+  setButtonWidth("30-Minute-open", 30-MinuteWidth/row3 * largest);
 
   setButtonWidth("continuous-open", continuousWidth/row4 * largest);
   setButtonWidth("custom-open", customWidth/row4 * largest);
 }
 else {
   // if we are mobile, then make each button the same width according to the largest
-  var widths = [teamWidth, indivWidth, hustleWidth, cipheringWidth, relayWidth, speedWidth, letterlWidth, continuousWidth, customWidth];
+  var widths = [teamWidth, indivWidth, hustleWidth, cipheringWidth, relayWidth, speedWidth, 30-MinutelWidth, continuousWidth, customWidth];
   for (var w = 0; w < widths.length; w++) {
     widths[w] += 5;
   }
@@ -87,7 +87,7 @@ else {
   setButtonWidth("ciphering-open", largest);
   setButtonWidth("relay-open", largest);
   setButtonWidth("speed-open", largest);
-  setButtonWidth("letter-open", largest);
+  setButtonWidth("30-Minute-open", largest);
   setButtonWidth("continuous-open", largest);
   setButtonWidth("custom-open", largest);
 }
@@ -143,13 +143,13 @@ function back() {
     continuous.startpause();
   if (speed.getState() === "running")
     speed.startpause();
-  if (letter.getState() === "running")
-    letter.startpause();
+  if (30-Minute.getState() === "running")
+    30-Minute.startpause();
   if (custom != null && custom.getState() === "running")
     custom.startpause();
 
   // find which one to hide
-  const boxes = ["team-box", "ciphering-box", "relay-box", "indiv-box", "hustle-box", "continuous-box", "speed-box", "letter-box", "custom-box"];
+  const boxes = ["team-box", "ciphering-box", "relay-box", "indiv-box", "hustle-box", "continuous-box", "speed-box", "30-Minute-box", "custom-box"];
   for (var i in boxes) {
     if (get(boxes[i]).style.display == "block")
       get(boxes[i]).style.display = "none";
@@ -400,7 +400,7 @@ function RoundTimer(title, secondsPerQuestion, secondsPerRound, numQuestions, ti
 /*******************************************************************************
       EXTENDED TIMER
       for extended/continuous schemes --
-      individual, speed, letter, hustle, continuous
+      individual, speed, 30-Minute, hustle, continuous
 \*******************************************************************************
 \*******************************************************************************/
 
@@ -471,7 +471,7 @@ function ExtendedTimer(title, secondsTotal, timerContainer, roundBox, roundEleme
     if (roundBox == null && roundElement == null) {
       get(secondsElement).innerHTML = this.parseSeconds(time);
 
-      // normal indiv-like color changes -- different for speed/letter because shorter tests
+      // normal indiv-like color changes -- different for speed/30-Minute because shorter tests
       // 15 MINUTES!
       if (secondsTotal > 30*60) {
         if (time === 15*60) {
@@ -576,7 +576,7 @@ function ExtendedTimer(title, secondsTotal, timerContainer, roundBox, roundEleme
 
     else {
       // standard start
-      // indiv, speed, letter
+      // indiv, speed, 30-Minute
       if (roundBox == null && roundElement == null) {
         get(startPauseButton).innerHTML = "Pause";
         
@@ -1037,7 +1037,7 @@ var speedSounds = {
   15: "fifteenseconds",
   0: "time"
 };
-var letterSounds = speedSounds;
+var 30-MinuteSounds = speedSounds;
 var customSounds = {
   900: "fifteenminutes",
   300: "fiveminutes",
@@ -1057,7 +1057,7 @@ var indiv = new ExtendedTimer("Individual Round", 60*60, "indiv-box", null, null
 var hustle = new ExtendedTimer("Hustle", 60*25, "hustle-box", "hustle-round-box", "hustle-round-number", 300, "hustle-sec-box", "hustle-sec-number", "hustle-start-pause-button", "hustle-reset-button", hustleSounds);
 var continuous = new ContinuousTimer("Continuous", 60*60*6, "continuous-box", "continuous-min-box", "continuous-min-number", 60, "continuous-sec-box", "continuous-sec-number", "continuous-start-pause-button", "continuous-reset-button", continuousSounds);
 var speed = new ExtendedTimer("Speed Math", 60*15, "speed-box", null, null, 0, "speed-sec-box", "speed-sec-number", "speed-start-pause-button", "speed-reset-button", speedSounds);
-var letter = new ExtendedTimer("Letter Math", 60*30, "letter-box", null, null, 0, "letter-sec-box", "letter-sec-number", "letter-start-pause-button", "letter-reset-button", letterSounds);
+var 30-Minute = new ExtendedTimer("30-Minute Math", 60*30, "30-Minute-box", null, null, 0, "30-Minute-sec-box", "30-Minute-sec-number", "30-Minute-start-pause-button", "30-Minute-reset-button", 30-MinuteSounds);
 
 get("back-button").onclick = back;
 
@@ -1095,9 +1095,9 @@ get("speed-open").onclick = speed.makeInterface;
 get("speed-start-pause-button").onclick = speed.startpause;
 get("speed-reset-button").onclick = speed.reset;
 
-get("letter-open").onclick = letter.makeInterface;
-get("letter-start-pause-button").onclick = letter.startpause;
-get("letter-reset-button").onclick = letter.reset;
+get("30-Minute-open").onclick = 30-Minute.makeInterface;
+get("30-Minute-start-pause-button").onclick = 30-Minute.startpause;
+get("30-Minute-reset-button").onclick = 30-Minute.reset;
 
 /*****************************************************************************\
       SOUND HANDLERS
