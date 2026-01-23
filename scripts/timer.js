@@ -127,7 +127,7 @@ function get(elem)
 { return document.getElementById(elem); }
 
 function back() {
-  get("title").innerHTML = "MA&#920; Timers";
+  get("title").innerHTML = "John's MA&#920; Timers";
 
   if (team.getState() === "running")
     team.pause();
