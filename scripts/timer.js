@@ -32,7 +32,7 @@ function setButtonWidth(button, displayedWidth) {
 }
 
 // detecting for mobile
-var mobile = getProperty("title", "width") < 601;
+var mobile = window.innerWidth < 601;
 
 var teamWidth = getButtonWidth("team-open");
 var indivWidth = getButtonWidth("indiv-open");
