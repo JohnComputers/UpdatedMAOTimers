@@ -1057,7 +1057,7 @@ var indiv = new ExtendedTimer("Individual Round", 60*60, "indiv-box", null, null
 var hustle = new ExtendedTimer("Hustle", 60*25, "hustle-box", "hustle-round-box", "hustle-round-number", 300, "hustle-sec-box", "hustle-sec-number", "hustle-start-pause-button", "hustle-reset-button", hustleSounds);
 var continuous = new ContinuousTimer("Continuous", 60*60*6, "continuous-box", "continuous-min-box", "continuous-min-number", 60, "continuous-sec-box", "continuous-sec-number", "continuous-start-pause-button", "continuous-reset-button", continuousSounds);
 var speed = new ExtendedTimer("Speed Math", 60*15, "speed-box", null, null, 0, "speed-sec-box", "speed-sec-number", "speed-start-pause-button", "speed-reset-button", speedSounds);
-var letter = new ExtendedTimer("letter Math", 60*30, "letter-box", null, null, 0, "letter-sec-box", "letter-sec-number", "letter-start-pause-button", "letter-reset-button", letterSounds);
+var letter = new ExtendedTimer("Letter Math", 60*30, "letter-box", null, null, 0, "letter-sec-box", "letter-sec-number", "letter-start-pause-button", "letter-reset-button", letterSounds);
 
 get("back-button").onclick = back;
 
