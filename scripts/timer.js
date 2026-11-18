@@ -580,7 +580,7 @@ function ExtendedTimer(title, secondsTotal, timerContainer, roundBox, roundEleme
       if (roundBox == null && roundElement == null) {
         get(startPauseButton).innerHTML = "Pause";
         
-        if (get("toggleUseCountdown").checked === true)
+        if (timerContainer === "letter-box" || get("toggleUseCountdown").checked === true)
           self.startCountdown();
         else
           self.startTicking();
