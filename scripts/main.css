@@ -13,8 +13,9 @@ html, body {
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: anti-aliased;
   font-size: 18px;
-  overflow: hidden; /* property for the splash screen */
 }
+
+#letter-alerts label { display: inline-block; margin: 4px 8px; }
 
 .mobile-styling { display: none; }
 
