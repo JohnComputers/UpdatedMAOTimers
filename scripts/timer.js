@@ -74,7 +74,7 @@ if (!mobile) {
 }
 else {
   // if we are mobile, then make each button the same width according to the largest
-  var widths = [teamWidth, indivWidth, hustleWidth, cipheringWidth, relayWidth, speedWidth, letterlWidth, continuousWidth, customWidth];
+  var widths = [teamWidth, indivWidth, hustleWidth, cipheringWidth, relayWidth, speedWidth, letterWidth, continuousWidth, customWidth];
   for (var w = 0; w < widths.length; w++) {
     widths[w] += 5;
   }
@@ -1037,7 +1037,7 @@ var speedSounds = {
   15: "fifteenseconds",
   0: "time"
 };
-var letterSounds = speedSounds;
+var letterSounds = { 0: "time" };
 var customSounds = {
   900: "fifteenminutes",
   300: "fiveminutes",
@@ -1094,6 +1094,19 @@ get("continuous-reset-button").onclick = continuous.reset;
 get("speed-open").onclick = speed.makeInterface;
 get("speed-start-pause-button").onclick = speed.startpause;
 get("speed-reset-button").onclick = speed.reset;
+
+function updateLetterAlerts() {
+  var choices = document.querySelectorAll("#letter-alerts input");
+  for (var i = 0; i < choices.length; i++) {
+    var seconds = choices[i].value;
+    if (choices[i].checked)
+      letterSounds[seconds] = customSounds[seconds];
+    else
+      delete letterSounds[seconds];
+  }
+}
+get("letter-alerts").onchange = updateLetterAlerts;
+updateLetterAlerts();
 
 get("letter-open").onclick = letter.makeInterface;
 get("letter-start-pause-button").onclick = letter.startpause;
