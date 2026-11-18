@@ -15,8 +15,6 @@ html, body {
   font-size: 18px;
 }
 
-#letter-alerts label { display: inline-block; margin: 4px 8px; }
-
 .mobile-styling { display: none; }
 
 p { text-align: center; }
