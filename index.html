@@ -359,13 +359,34 @@
         <a class="button" id="letter-reset-button">Reset</a>
       </div>
 
-      <fieldset id="letter-alerts">
-        <legend>Voice alerts</legend>
-        <label><input type="checkbox" value="900"> 15 minutes</label>
-        <label><input type="checkbox" value="300"> 5 minutes</label>
-        <label><input type="checkbox" value="60" checked> 1 minute</label>
-        <label><input type="checkbox" value="15" checked> 15 seconds</label>
-      </fieldset>
+      <div id="letter-alerts">
+        <div class="table-wrapper">
+          <div class="vert-align-wrapper" style="height: 70px; border-right: 1px solid #bdb9b5;">
+            Timer duration:
+          </div>
+
+          <div class="vert-align-wrapper" style="height: 70px;">
+            Warn when there is/are ___ remaining:
+          </div>
+        </div>
+
+        <hr style="margin: 10px 0px 10px 0px; border-bottom: 1px solid #bdb9b5;">
+
+        <div class="table-wrapper" style="margin-bottom: 20px;">
+          <div class="vert-align-wrapper" style="border-right: 1px solid #bdb9b5;">
+            30 minutes
+          </div>
+
+          <div class="vert-align-wrapper">
+            <div class="input-box">
+              <div><label><input type="checkbox" value="900">15 minutes</label></div>
+              <div><label><input type="checkbox" value="300">5 minutes</label></div>
+              <div><label><input type="checkbox" value="60" checked>1 minute</label></div>
+              <div><label><input type="checkbox" value="15" checked>15 seconds</label></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!--========-->
